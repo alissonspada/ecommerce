@@ -1,20 +1,42 @@
 package com.ecommerce.entities;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Cliente implements Serializable {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
 	
-	
+	@Column(length = 120)
 	private String nome;
+	
+	@Column(length = 255)
 	private String sobrenome;
+	
+	@Column(length = 11)
 	private String cpf;
+	
+	@Column(length = 9)
 	private String rg;
-	private String dtnasc;
+	
+	@Temporal(TemporalType.DATE)
+	private Date nascimento;
+	
+	@Column(length = 255)
 	private String senha;
+	
+	@Column(length = 10)
 	private String telefone;
 	
 	public String getNome() {
@@ -41,11 +63,12 @@ public class Cliente implements Serializable {
 	public void setRg(String rg) {
 		this.rg = rg;
 	}
-	public String getDtnasc() {
-		return dtnasc;
+
+	public Date getNascimento() {
+		return nascimento;
 	}
-	public void setDtnasc(String dtnasc) {
-		this.dtnasc = dtnasc;
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
 	}
 	public String getSenha() {
 		return senha;

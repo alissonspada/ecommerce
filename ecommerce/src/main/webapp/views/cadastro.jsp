@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Cadastro</title>
-	<link rel="stylesheet" type="text/css" href="css/estilos2.css">
+	<link rel="stylesheet" type="text/css" href="resources/cadastro/css/login.css">
 </head>
 <body>
 	<form>
