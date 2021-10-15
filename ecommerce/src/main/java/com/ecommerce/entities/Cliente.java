@@ -14,12 +14,23 @@ import javax.persistence.TemporalType;
 @Entity
 public class Cliente implements Serializable {
 	
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	@Column(length = 120)
+	private String email;
+	
+	@Column(length = 120)
 	private String nome;
+	
+	@Column(length = 8)
+	private Date nascimento;
+	
+	@Column(length = 9)
+	private String telefone;
 	
 	@Column(length = 255)
 	private String sobrenome;
@@ -27,18 +38,31 @@ public class Cliente implements Serializable {
 	@Column(length = 11)
 	private String cpf;
 	
-	@Column(length = 9)
-	private String rg;
-	
-	@Temporal(TemporalType.DATE)
-	private Date nascimento;
 	
 	@Column(length = 255)
 	private String senha;
 	
-	@Column(length = 10)
-	private String telefone;
 	
+	
+	
+	public Date getNascimento() {
+		return nascimento;
+	}
+	public void setNascimento(Date nascimento) {
+		this.nascimento = nascimento;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -57,31 +81,13 @@ public class Cliente implements Serializable {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getRg() {
-		return rg;
-	}
-	public void setRg(String rg) {
-		this.rg = rg;
-	}
 
-	public Date getNascimento() {
-		return nascimento;
-	}
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
-	}
 	public String getSenha() {
 		return senha;
 	}
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-	public String getTelefone() {
-		return telefone;
-	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
-	}
-	
+
 
 }
