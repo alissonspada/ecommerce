@@ -15,10 +15,11 @@ function logar() {
        dataType: 'json',
  	data: JSON.stringify(cliente),
     success: function(result){
+    	console.log(result);
 	
     },
-    error: function(){
-        console.log("deu ruim")
+    error: function(result){
+        console.log("result")
     }
 
     });
